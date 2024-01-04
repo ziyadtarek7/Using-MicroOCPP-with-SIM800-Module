@@ -1,0 +1,76 @@
+{
+    "name": "MicroOcpp",
+    "version": "1.0.0",
+    "description": "OCPP 1.6 Client for microcontrollers",
+    "keywords": "OCPP, 1.6, OCPP 1.6, Smart Energy, Smart Charging, client, ESP8266, ESP32, Arduino, esp-idf, EVSE, Charge Point",
+    "repository":
+    {
+        "type": "git",
+        "url": "https://github.com/matth-x/MicroOcpp/"
+    },
+    "authors":
+    [
+      {
+        "name": "Matthias Akstaller",
+        "url": "https://www.micro-ocpp.com",
+        "maintainer": true
+      }
+    ],
+    "license": "MIT",
+    "homepage": "https://www.micro-ocpp.com",
+    "dependencies": [
+        {
+            "owner": "bblanchon",
+            "name": "ArduinoJson",
+            "version": "6.20.1"
+        },
+        {
+            "owner": "links2004",
+            "name": "WebSockets",
+            "version": "2.4.1"
+        }
+      ],
+    "frameworks": "arduino,espidf",
+    "platforms": "espressif8266, espressif32",
+
+    "export": {
+        "include":
+        [
+            "src/*",
+            "examples/*",
+            "platformio.ini",
+            "library.json",
+            "library.properties",
+            "README.md",
+            "CMakeLists.txt",
+            "docs/*",
+            "LICENSE",
+            "mkdocs.yml",
+            "CHANGELOG.md"
+        ]
+    },
+
+    "examples": [
+      {
+          "name": "Basic OCPP connection",
+          "base": "examples/ESP",
+          "files": [
+              "main.cpp"
+          ]
+      },
+      {
+          "name": "OCPP Security Profile 2",
+          "base": "examples/ESP-TLS",
+          "files": [
+              "main.cpp"
+          ]
+      },
+      {
+        "name": "ESP-IDF integration",
+        "base": "examples/ESP-IDF",
+        "files": [
+            "main/main.c"
+        ]
+      }
+    ]
+}
